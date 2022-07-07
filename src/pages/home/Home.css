@@ -1,0 +1,14 @@
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.cart-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.loading{
+    margin-left: 4px;
+    margin-top: 4px;
+}

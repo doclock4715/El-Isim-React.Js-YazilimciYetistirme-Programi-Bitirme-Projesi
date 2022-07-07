@@ -1,0 +1,14 @@
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../assets/images/leaf1.jpg');
+    /* resmin ortasından başlanılıyor hizalanmaya */
+    background-position: center;
+    /* background için kullanılan resim küçükse boşlukları doldurmak için tekrar tekrar kullanılıp kullanılmamasını ayarlıyor.*/
+    background-repeat: no-repeat;
+    /* img responsive davranıyor ve ilk başta resmin daha fazla alanını görebiliyoruz  */
+    background-size: cover;
+}

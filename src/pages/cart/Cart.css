@@ -1,0 +1,21 @@
+.cart-top {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0px;
+}
+
+.cart-img {
+    height: 75px;
+    width: 100px;
+    border: 1px solid #c7c8cb;
+    padding: 10px 8px;
+}
+
+.right {
+    display: flex;
+    justify-content: end;
+}
+.total{
+    display: flex;
+    justify-content: end;
+}
