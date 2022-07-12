@@ -11,6 +11,7 @@ import { useContext } from "react";
 import { AuthContext } from '../../context/AuthContext';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import GoogleButton from 'react-google-button'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -83,7 +84,7 @@ const Login = () => {
                     <Form.Text className="text-muted ">
                         Don't have an account?
                     </Form.Text>
-                    <Button href="/signup" variant="link">Sign Up</Button>
+                    <Button as={Link} to="/signup" variant="link">Sign Up</Button>
                 </Stack>
                 <hr />
                 <GoogleButton
