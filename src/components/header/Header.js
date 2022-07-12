@@ -108,10 +108,10 @@ const Header = () => {
                     <NavDropdown title={"Cart " + cart.length} id="collasible-nav-dropdown" >
                         {renderCart}
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="cart">Go to cart</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/cart">Go to cart</NavDropdown.Item>
                     </NavDropdown>
                     {currentUser
-                        ? <Button href='/addProduct' color="success"> Add Product</Button>
+                        ? <Button as={Link} to="/addProduct" color="success"> Add Product</Button>
                         : <Button onClick={() => toast.error('You must first log in', {
                             position: "top-center",
                             autoClose: 4000,
