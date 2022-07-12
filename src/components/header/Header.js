@@ -17,7 +17,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { Link } from 'react-router-dom'
 //
 import { signOut } from "firebase/auth";
-import { auth } from 'C:/Users/doclo/el-isim/src/firebase.js';
+import { auth } from '../../firebase.js'
 //
 import { CartContext } from '../../context/CartContext';
 //
