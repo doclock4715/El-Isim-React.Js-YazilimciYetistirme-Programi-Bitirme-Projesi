@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { auth } from 'C:/Users/doclo/el-isim/src/firebase.js';
+import { auth } from '../../firebase.js'
 import { useState } from 'react';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
