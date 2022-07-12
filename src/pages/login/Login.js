@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../login/Login.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from 'C:/Users/doclo/el-isim/src/firebase.js';
+import { auth } from '../../firebase/firebase.js'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Stack } from 'react-bootstrap';
