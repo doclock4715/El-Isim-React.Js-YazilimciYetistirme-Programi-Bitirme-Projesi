@@ -14,10 +14,11 @@ import { AuthContext } from "../../context/AuthContext";
 import "../myProducts/MyProducts.css"
 //
 import { toast } from 'react-toastify';
+//
+import { ref, deleteObject } from "firebase/storage";
+import { storage } from "../../firebase"
 
 const MyProducts = () => {
-
-
 
     const [myProducts, setMyProducts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -33,6 +34,7 @@ const MyProducts = () => {
                     list.push({ id: doc.id, ...doc.data() });
                 });
                 setMyProducts(list.filter((item) => item.userId === currentUser.uid));
+             
                 setIsLoading(false)
             } catch (error) {
                 console.log(error)
@@ -44,6 +46,15 @@ const MyProducts = () => {
 
     const handleDelete = async (product) => {
         await deleteDoc(doc(db, "products", product.id));
+        // Create a reference to the file to delete
+        const desertRef = ref(storage, product.imgStorageName);
+        // Delete the file
+        deleteObject(desertRef).then(() => {
+            // File deleted successfully
+        }).catch((error) => {
+            // Uh-oh, an error occurred!
+        });
+
         setMyProducts(myProducts.filter((item) => item.id !== product.id));
         toast.success(`${product.title} deleted successfully`, {
             position: "bottom-right",
@@ -57,6 +68,7 @@ const MyProducts = () => {
     }
 
     let renderProducts = myProducts.map((product, index) => {
+        console.log(myProducts)
         return (
             <Card key={index} style={{ width: '16rem', margin: 8 }}>
                 <Card.Img style={{ height: '12rem', width: '16rem', marginLeft: 'auto', marginRight: 'auto', padding: 5 }} variant="top" src={product.img} alt={product.title} />
@@ -81,10 +93,10 @@ const MyProducts = () => {
 
     return (
         <div> <Header></Header>
-        <div className='my-products'>
-        {isLoading ? <div className="loading">Loading...</div> : renderProducts}
+            <div className='my-products'>
+                {isLoading ? <div className="loading">Loading...</div> : renderProducts}
 
-        </div>
+            </div>
         </div>
     )
 }

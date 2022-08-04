@@ -26,7 +26,7 @@ function AddProduct() {
 
     useEffect(() => {
         const uploadFile = () => {
-            const name = new Date().toLocaleString() + ""
+            const name = new Date().toLocaleString() + " "
             const storageRef = ref(storage, name + file.name)
 
             const uploadTask = uploadBytesResumable(storageRef, file);
@@ -62,7 +62,7 @@ function AddProduct() {
                     // Handle successful uploads on complete
                     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
                     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                        setData((prev) => ({ ...prev, img: downloadURL }));
+                        setData((prev) => ({ ...prev, img: downloadURL, imgStorageName: name + file.name }));
                     });
                 }
             );
